@@ -1,0 +1,339 @@
+/**
+ * College Notes Management System - Core Stylesheet
+ * Modern Academic Minimalist Theme
+ */
+
+:root {
+    --primary-color: #1e3a8a;       /* Deep Academic Navy */
+    --primary-hover: #1e40af;
+    --primary-light: #eff6ff;
+    --secondary-color: #0f172a;     /* Dark Slate */
+    --accent-color: #f59e0b;        /* Academic Gold */
+    --accent-hover: #d97706;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+    --info-color: #06b6d4;
+    --bg-light: #f8fafc;
+    --card-border: #e2e8f0;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --sidebar-width: 260px;
+    --header-height: 64px;
+    --border-radius: 12px;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --------------------------------------------------------
+ * Typography & Helpers
+ * -------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--secondary-color);
+    letter-spacing: -0.02em;
+}
+
+.fs-7 {
+    font-size: 0.825rem !important;
+}
+
+.tracking-wide {
+    letter-spacing: 0.05em;
+}
+
+.bg-navy {
+    background-color: #0d1b2a !important;
+}
+
+.hover-light:hover {
+    color: #ffffff !important;
+}
+
+/* --------------------------------------------------------
+ * Navigation & Brand
+ * -------------------------------------------------------- */
+.main-navbar {
+    height: var(--header-height);
+    background: linear-gradient(135deg, #0d1b2a 0%, #1e3a8a 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1030;
+}
+
+.brand-icon-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #f59e0b;
+    color: #0d1b2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+}
+
+.brand-text {
+    font-size: 1.25rem;
+    letter-spacing: -0.03em;
+}
+
+.brand-badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.avatar-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: transform 0.2s ease;
+}
+
+.avatar-circle:hover {
+    transform: scale(1.05);
+}
+
+.role-badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+}
+
+/* --------------------------------------------------------
+ * Dashboard Layout System
+ * -------------------------------------------------------- */
+.dashboard-layout {
+    display: flex;
+    min-height: calc(100vh - var(--header-height));
+    position: relative;
+}
+
+.sidebar-wrapper {
+    width: var(--sidebar-width);
+    background: #ffffff;
+    border-right: 1px solid var(--card-border);
+    flex-shrink: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 1020;
+}
+
+.sidebar-inner {
+    height: calc(100vh - var(--header-height));
+    position: sticky;
+    top: var(--header-height);
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 2rem;
+    background-color: var(--bg-light);
+    max-width: calc(100vw - var(--sidebar-width));
+    overflow-x: hidden;
+}
+
+/* Sidebar Nav Items */
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--text-main);
+    font-weight: 500;
+    border-radius: 8px;
+    margin-bottom: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.sidebar-nav .nav-link:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.sidebar-nav .nav-link.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+}
+
+.sidebar-nav .nav-link.active .nav-icon {
+    color: #ffffff !important;
+}
+
+.sidebar-nav .nav-icon {
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.role-indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.role-indicator-dot.role-admin { background-color: #ef4444; }
+.role-indicator-dot.role-teacher { background-color: #10b981; }
+.role-indicator-dot.role-student { background-color: #3b82f6; }
+
+/* --------------------------------------------------------
+ * Cards, Tables & Components
+ * -------------------------------------------------------- */
+.stat-card {
+    background: #ffffff;
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+}
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.stat-icon.blue { background: #dbeafe; color: #1d4ed8; }
+.stat-icon.green { background: #d1fae5; color: #047857; }
+.stat-icon.amber { background: #fef3c7; color: #b45309; }
+.stat-icon.purple { background: #ede9fe; color: #6d28d9; }
+.stat-icon.red { background: #fee2e2; color: #b91c1c; }
+
+.content-card {
+    background: #ffffff;
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+}
+
+.content-card .card-header {
+    background: #ffffff;
+    border-bottom: 1px solid var(--card-border);
+    padding: 1.25rem 1.5rem;
+}
+
+.content-card .card-body {
+    padding: 1.5rem;
+}
+
+/* Custom Table Styles */
+.table-custom th {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 700;
+    border-top: none;
+    background-color: #f8fafc;
+    padding: 0.85rem 1rem;
+}
+
+.table-custom td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-color: #f1f5f9;
+}
+
+/* --------------------------------------------------------
+ * Buttons & Form Controls
+ * -------------------------------------------------------- */
+.btn {
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.95rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+
+/* --------------------------------------------------------
+ * Responsive Mobile Offcanvas
+ * -------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    .sidebar-wrapper {
+        position: fixed;
+        top: var(--header-height);
+        left: -100%;
+        bottom: 0;
+        z-index: 1045;
+        box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+    }
+
+    .sidebar-wrapper.show {
+        left: 0;
+    }
+
+    .main-content {
+        max-width: 100vw;
+        padding: 1.25rem;
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1040;
+        display: none;
+    }
+
+    .sidebar-overlay.show {
+        display: block;
+    }
+}

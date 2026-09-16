@@ -1,0 +1,50 @@
+/**
+ * College Notes Management System - Admin Stylesheet
+ * High-density UI for Admin CRUD and Security Operations
+ */
+
+.admin-header {
+    background: linear-gradient(135deg, #1e1e24 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 1.75rem 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.table-action-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.status-badge-active {
+    background-color: #d1fae5;
+    color: #065f46;
+    font-weight: 600;
+}
+
+.status-badge-inactive {
+    background-color: #fef3c7;
+    color: #92400e;
+    font-weight: 600;
+}
+
+.status-badge-blocked {
+    background-color: #fee2e2;
+    color: #991b1b;
+    font-weight: 600;
+}
+
+.backup-card {
+    border: 2px dashed #cbd5e1;
+    background: #f8fafc;
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    text-align: center;
+}

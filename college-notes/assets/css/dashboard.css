@@ -1,0 +1,118 @@
+/**
+ * College Notes Management System - Dashboard Stylesheet
+ * For Student & Teacher Portals
+ */
+
+.page-header-bar {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Note Card Component */
+.note-card {
+    background: #ffffff;
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.note-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+    border-color: #cbd5e1;
+}
+
+.note-card .note-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+}
+
+.note-card .card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.note-card .note-icon-large {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+.note-card .note-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.note-card .note-desc {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.note-card .note-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-top: 1px solid #f1f5f9;
+    padding-top: 0.75rem;
+    margin-top: auto;
+}
+
+.note-card .card-footer {
+    background: #fafafa;
+    border-top: 1px solid var(--card-border);
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Filter Bar */
+.filter-card {
+    background: #ffffff;
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    margin-bottom: 1.75rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* Document Preview Frame */
+.document-preview-container {
+    background: #1e293b;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    min-height: 600px;
+    position: relative;
+}
+
+.document-preview-container iframe {
+    width: 100%;
+    height: 700px;
+    border: none;
+}
